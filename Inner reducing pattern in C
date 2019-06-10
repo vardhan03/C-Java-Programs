@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter size :\n");
+    scanf("%d",&n);
+    int a[100][100];
+    int len=2*n-1;
+    int row=0;
+    int col=len-1;
+   while(n!=0)
+   {
+    for(int i=row;i<=col;i++)
+    {
+        for(int j=row;j<=col;j++)
+        {
+            if(i==row||i==col||j==row||j==col)
+            {
+                a[i][j]=n;
+            }
+        }
+        
+    }
+    ++row;
+    --col;
+    --n;
+ }
+ for(int i=0;i<len;i++)
+ {
+     for(int j=0;j<len;j++)
+     {
+        printf("%d ",a[i][j]); 
+     }
+     printf("\n");
+ }
+    return 0;
+}
